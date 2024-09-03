@@ -160,7 +160,6 @@ class _HomePageState extends State<HomePage> {
       currencies = await getCurrencies();
     } catch (e) {
       print('Error fetching currencies: $e');
-      // Handle the error, e.g., show an error message to the user
     }
     setState(() {});
   }
@@ -200,7 +199,7 @@ class _HomePageState extends State<HomePage> {
             MaterialColor? color = colors[index % colors.length];
             return getListItemUi(currency, color);
           } else {
-            return SizedBox(); // Return an empty SizedBox if currency is null
+            return SizedBox(); 
           }
         },
         itemCount: currencies?.length ?? 0,
@@ -225,8 +224,8 @@ class _HomePageState extends State<HomePage> {
         child: Text(
           currencySymbol.length > 3
               ? currencySymbol.substring(0, 3)
-              : currencySymbol, // Limit the text to 3 characters
-          style: TextStyle(fontSize: 16), // Adjust font size as needed
+              : currencySymbol, 
+          style: TextStyle(fontSize: 16),
         ),
       ),
       title: Text(currencyName),
